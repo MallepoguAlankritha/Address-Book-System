@@ -5,12 +5,11 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
-
 public class Addressbookkmain {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Addressbookkmain addressBook = new Addressbookkmain();
-        Map<String, Addressbookkmain> addressBookMap = new HashMap<String, Addressbookkmain>();
+        Addressbooksystem addressBook = new Addressbooksystem();
+        Map<String, Addressbooksystem> addressBookMap = new HashMap<String, Addressbooksystem>();
 
         while (true) {
             System.out.println("\nWelcome to Address Book System");
@@ -23,9 +22,9 @@ public class Addressbookkmain {
                     System.out.println("Enter Name of new Address Book: ");
                     String bookName = sc.next();
                     sc.nextLine();
-                    addressBookMap.put(bookName, new Addressbookkmain());// adding bookname as a key and vlue is allocating
+                    addressBookMap.put(bookName, new Addressbooksystem ());// adding bookname as a key and vlue is allocating
                     // memory for addressbook obj
-                    Addressbookkmain.addressBookOptions(addressBookMap.get(bookName));// call addressbookoption method with
+                    Addressbooksystem .addressBookOptions(addressBookMap.get(bookName));// call addressbookoption method with
                     // passing key of hashmap
                     break;
                 case 2:
@@ -38,7 +37,7 @@ public class Addressbookkmain {
                     System.out.println("Enter Address Book name you want to Open : ");
                     String name = sc.nextLine();
                     System.out.println("Current Address Book is : " + name);
-                    Addressbookkmain.addressBookOptions(addressBookMap.get(name));// call method with passing address book name
+                    Addressbooksystem .addressBookOptions(addressBookMap.get(name));// call method with passing address book name
                     break;
                 case 3:
                     System.out.println("Enter Address Book name to be delete: ");
@@ -47,9 +46,13 @@ public class Addressbookkmain {
                     break;
                 case 4:
                     System.out.println("Welcome to the search option:");
-                    Addressbookkmain.searchByOptions();
+                    addressBook.searchByOptions();
                 case 5:
-                    sc.close();// for closing the program
+                    System.out.println("Welcome to view By Option:");
+                    addressBook.viewByOption(addressBookMap);
+                    break;
+                case 6:
+                    sc.close();// for closing the programme
                     return;
                 default:
                     System.out.println("You Entered Invalid Choice....!");
@@ -57,3 +60,4 @@ public class Addressbookkmain {
             }
         }
     }
+}
