@@ -1,19 +1,18 @@
 package com.addressbook;
-
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Scanner;
+import java.util.HashMap;
 
-public class AddressbookSystem{
-	ArrayList<Contacts> arrayDetails = new ArrayList<>();
+public class Addressbookkmain<details> {
+    static ArrayList<Contacts> arrayDetails = new ArrayList<>();
     static Scanner sc = new Scanner(System.in);
     static HashMap<String, ArrayList<Contacts>> hashmap = new HashMap<>();
-    static AddressbookSystem details = new AddressbookSystem();
+    static Addressbookkmain details = new Addressbookkmain();
 
     /**
      * This method is used to add details to address book
      */
-    public void addDetails() {
+    public static void addDetails() {
         Contacts info = new Contacts();
         System.out.println("Enter the first name");
         info.setFirstName(sc.next());
@@ -158,7 +157,7 @@ public class AddressbookSystem{
                     arrayDetails = new_address_book;
                     while (true) {
                         System.out.println("Choose what you want to do: ");
-                        System.out.println("1.Add details.\n2.Edit details.\n3.Delete contact. \n4.Dipslay all contacts. \n5.Duplicate check.\n6.Exit");
+                        System.out.println("1.Add details.\n2.Edit details.\n3.Delete contact. \n4.Display all contacts. \n5.Duplicate check.\n6.Exit");
                         int choose1 = sc.nextInt();
                         if (choose1 == 6) {
                             System.out.println("Exited");
@@ -166,7 +165,7 @@ public class AddressbookSystem{
                         }
                         switch (choose1) {
                             case 1:
-                                details.addDetails();
+                            	Addressbookkmain.addDetails();
                                 break;
                             case 2:
                                 details.editDetails();
@@ -212,7 +211,7 @@ public class AddressbookSystem{
                             }
                             switch (choose1) {
                                 case 1:
-                                    details.addDetails();
+                                	Addressbookkmain.addDetails();
                                     break;
                                 case 2:
                                     details.editDetails();
@@ -254,5 +253,7 @@ public class AddressbookSystem{
     public static void main(String[] args) {
         System.out.println("Welcome to Address Book program ");
         details.createAddressBook();
+       
+        
     }
 }
