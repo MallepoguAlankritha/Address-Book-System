@@ -14,7 +14,7 @@ public class Addressbookkmain {
 
         while (true) {
             System.out.println("\nWelcome to Address Book System");
-            System.out.println("1. New Address Book \n2. Select Address Book \n3. Delete Address Book \n4. Search Contact Data \n5. View Contact Data \n6. Count Contacts \n7. Exit");
+            System.out.println("1. New Address Book \n2. Select Address Book \n3. Delete Address Book \n4. Search Contact Data \n5.View Contact Data \n6.Count Contacts \n7. Exit");
             System.out.print("Enter Your choice: ");
             int choice = sc.nextInt();
             sc.nextLine();
@@ -23,8 +23,7 @@ public class Addressbookkmain {
                     System.out.println("Enter Name of new Address Book: ");
                     String bookName = sc.next();
                     sc.nextLine();
-                    addressBookMap.put(bookName, new Addressbooksystem());
-                    // adding bookname as a key and vlue is allocating
+                    addressBookMap.put(bookName, new Addressbooksystem());// adding bookname as a key and vlue is allocating
                     // memory for addressbook obj
                     Addressbooksystem.addressBookOptions(addressBookMap.get(bookName));// call addressbookoption method with
                     // passing key of hashmap
@@ -58,7 +57,7 @@ public class Addressbookkmain {
                     addressBook.countByOption();
                     break;
                 case 7:
-                    sc.close();// for closing the programme
+                    sc.close();// for closing the programm
                     return;
                 default:
                     System.out.println("You Entered Invalid Choice....!");
