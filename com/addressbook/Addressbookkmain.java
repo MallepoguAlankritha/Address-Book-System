@@ -1,14 +1,20 @@
 package com.addressbook;
-import java.util.*;
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+
 public class Addressbookkmain {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Addressbooksystem addressBook = new Addressbooksystem();
-        Map<String, Addressbooksystem> addressBookMap = new HashMap<String, Addressbooksystem>();
+        Map<String, Addressbooksystem> addressBookMap = new HashMap<>();
 
         while (true) {
             System.out.println("\nWelcome to Address Book System");
-            System.out.println("1. New Address Book \n2. Select Address Book \n3. Delete Address Book \n4. Search Contact Data \n5.View Contact Data \n6.Count Contacts \n7. Exit");
+            System.out.println("1. New Address Book \n2. Select Address Book \n3. Delete Address Book \n4. Search Contact Data \n5. View Contact Data \n6. Count Contacts \n7. Exit");
             System.out.print("Enter Your choice: ");
             int choice = sc.nextInt();
             sc.nextLine();
@@ -17,7 +23,8 @@ public class Addressbookkmain {
                     System.out.println("Enter Name of new Address Book: ");
                     String bookName = sc.next();
                     sc.nextLine();
-                    addressBookMap.put(bookName, new Addressbooksystem());// adding bookname as a key and value is allocating
+                    addressBookMap.put(bookName, new Addressbooksystem());
+                    // adding bookname as a key and vlue is allocating
                     // memory for addressbook obj
                     Addressbooksystem.addressBookOptions(addressBookMap.get(bookName));// call addressbookoption method with
                     // passing key of hashmap
